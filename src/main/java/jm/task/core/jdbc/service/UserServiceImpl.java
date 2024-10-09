@@ -8,11 +8,11 @@ import java.util.List;
 
 public class UserServiceImpl extends UserDaoJDBCImpl implements UserService {
     private UserDao userDao = new UserDaoJDBCImpl();
-
+    @Override
     public void createUsersTable() {
         userDao.createUsersTable();
     }
-
+    @Override
     public void dropUsersTable() {
         userDao.dropUsersTable();
     }
@@ -21,14 +21,15 @@ public class UserServiceImpl extends UserDaoJDBCImpl implements UserService {
         userDao.saveUser(name, lastName, age);
     }
 
+    @Override
     public void removeUserById(long id) {
         userDao.removeUserById(id);
     }
-
+    @Override
     public List<User> getAllUsers() {
         return userDao.getAllUsers();
     }
-
+    @Override
     public void cleanUsersTable() {
         userDao.cleanUsersTable();
     }
